@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require mustache
 //= require mason
 //= require ckeditor/init
+//= require jasny-bootstrap
 //= require_tree .

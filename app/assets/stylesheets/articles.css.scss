@@ -1,0 +1,24 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-articles {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+
+	text-align: center;
+
+	.user-article {
+		position: relative;
+
+		padding: 5px;
+		margin: 10px;
+
+		text-align: left;
+		float: left;
+
+		display: inline-block;
+		vertical-align: top;
+	}
+}

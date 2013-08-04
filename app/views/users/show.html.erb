@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Avatar:</b>
+  <%= @user.avatar %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @user.about %>
+</p>
+
+
+<div id="user-articles" data-json-url="<%= articles_url(:format => :json) %>">
+  <% @articles.each do |article| %>
+
+    <div class="user-article">
+      <%= link_to article.title, article_path(article) %></br>
+      <%= article.content %> </br>
+      <%= article.user.email %>      
+    </div>
+
+  <% end %>  
+
+  <script type="text/html" id="article_template">
+    <div class="user-article">
+      <a href="/articles/{{id}}">{{title}}</a></br>
+      {{content}} </br>
+      <a href="/users/{{id}}">{{user}}</a>     
+    </div>
+  </script>
+
+    <script>
+    $(function(){
+      $("#user-articles").mason({
+        itemSelector: ".user-article",
+        ratio: 1.5,
+        sizes: [
+          [1,1]
+        ],
+        // columns: [
+        //   [0,480,1],
+        //   [480,780,2],
+        //   [780,1080,3],
+        //   [1080,1320,4],
+        //   [1320,1680,5]
+        // ],
+        filler: {
+        },
+        layout: 'fluid',
+        gutter: 5
+      });
+    });
+    </script>
+
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

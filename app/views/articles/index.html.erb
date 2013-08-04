@@ -1,0 +1,27 @@
+<h1>Listing articles</h1>
+
+
+<div id="articles" data-json-url="<%= articles_url(:format => :json) %>">
+  <% @articles.each do |article| %>
+
+    <div class="article">
+      <%= link_to article.title, article_path(article) %></br>
+      <%= article.content %> </br>
+      <%= article.user.email %>      
+    </div>
+
+  <% end %>  
+
+  <script type="text/html" id="article_template">
+    <div class="article">
+      <a href="/articles/{{id}}">{{title}}</a></br>
+      {{content}} </br>
+      <a href="/users/{{id}}">{{user}}</a>     
+    </div>
+  </script>
+
+</div>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>

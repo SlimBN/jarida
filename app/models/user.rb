@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
-  attr_accessible :about, :avatar, :first_name, :last_name, :location, :username, :email, :password
+  attr_accessible :about, :avatar, :first_name, :last_name, :location, :username, :email, :password, :password_confirmation
   attr_accessible :provider, :uid, :name
 
   has_many :articles

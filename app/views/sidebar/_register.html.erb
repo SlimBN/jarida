@@ -1,0 +1,35 @@
+<div class="register">
+    <div class="header">
+      S'enregistrer
+    </div>
+
+    <div class="content controls controls-row">
+
+	    	<%= form_for("user", :url => user_registration_path) do |f| %>
+
+	    	<div class="table">
+
+
+	    		<div class="forms">
+	    			<%= f.text_field :first_name, :class => "names", :placeholder => "Prénom" %>
+					<%= f.text_field :last_name, :class => "names", :placeholder => "Nom" %>
+					
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+					  <div class="input-append">
+					    <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+					  </div>
+					</div>
+
+					<%= f.email_field :email, :autofocus => true, :class => "large", :placeholder => "Votre Addresse Email" %>
+					<%= f.password_field :password, :class => "large", :placeholder => "Votre Mot de Passe" %>
+					<%= f.password_field :password_confirmation, :class => "large", :placeholder => "Veuillez confirmer votre mot de passe" %>
+					<div class="submit"><%= f.submit "Sign up" %></div>	    			
+	    		</div>
+	    	</div>
+
+
+		<% end %>
+
+
+    </div>
+</div>

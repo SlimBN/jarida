@@ -8,45 +8,52 @@
 </head>
 <body>
 
-<a id="left-menu" href="#left-menu">Left Menu</a> 
-<a id="right-menu" href="#right-menu">Right Menu</a>
+<div class="contents">
+  zfzezgergrg
+</div>
 
-<div id="left-menu">
-  flefty
-</div>
-<div id="right-menu">
-  flefty
-</div>
 
 <div id="sidebar-navs">
   <div class="sidebar-button">
-    <%= link_to (image_tag "sidebar/user.png"), "#login-panel", :id => "login-panel" %>
+    <%= link_to (image_tag "sidebar/user.png"), "#login-panel", :class => "login-panel" %>
   </div>
 </div>
 
 <div id="login-panel">
   <div id="quit">
-    <a id="login-panel" href="#login-panel">QUIT</a>
+    <a class="login-panel" href="#login-panel">QUIT</a>
   </div>
-  Register login form
+  
+  <%= render "sidebar/login" %>
+  <%= render "sidebar/register" %>
+
 </div>
- 
+
 <script>
-$(document).ready(function() {
-    $('#left-menu').sidr({
-      name: 'sidr-left',
-      side: 'left' // By default
-    });
-    $('#right-menu').sidr({
-      name: 'sidr-right',
-      side: 'right'
-    });
-    $('#login-panel').sidr({
-      name: 'sidr-right',
-      side: 'right'
-    });
+  var meny = Meny.create({
+    // The element that will be animated in from off screen
+    menuElement: document.querySelector( '#sidebar-navs' ),
+
+    // The contents that gets pushed aside while Meny is active
+    contentsElement: document.querySelector( '#login-panel' ),
+
+    // The alignment of the menu (top/right/bottom/left)
+    position: 'right',
+
+    // The height of the menu (when using top/bottom position)
+    height: 200,
+
+    // The width of the menu (when using left/right position)
+    width: 260,
+
+    // Use mouse movement to automatically open/close
+    mouse: true,
+
+    // Use touch swipe events to open/close
+    touch: true
 });
 </script>
+
 
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -56,9 +63,13 @@ $(document).ready(function() {
     <% end %>
 
     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  <div id="container">
+    <%= yield %>
+  </div>
 
-<%= yield %>
 
+
+  <%= javascript_include_tag "application" %>
 
 </body>
 </html>

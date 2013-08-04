@@ -1,0 +1,17 @@
+<div class="login">
+    <div class="header">
+      Login
+    </div>
+
+    <div class="content controls controls-row">
+
+		<%= form_for("user", :url => user_session_path) do |f| %>
+		  <%= f.email_field :email, :autofocus => true, :class => "span2", :placeholder => "Email" %>
+
+		  <%= f.password_field :password, :class => "span2", :placeholder => "Password" %>
+
+		  <%= f.submit "Sign in", :class => "signin" %>
+		<% end %>
+
+    </div>
+</div>

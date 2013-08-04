@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :avatar
       t.string :location
       t.text :about
+      t.string :gender
 
       t.timestamps
     end

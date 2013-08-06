@@ -3,21 +3,23 @@
 
 <div id="articles" data-json-url="<%= articles_url(:format => :json) %>">
   <% @articles.each do |article| %>
-
+<blockquote>
     <div class="article">
       <%= link_to article.title, article_path(article) %></br>
       <%= article.content %> </br>
       <%= article.user.email %>      
     </div>
-
+</blockquote>
   <% end %>  
 
   <script type="text/html" id="article_template">
+    <blockquote>
     <div class="article">
       <a href="/articles/{{id}}">{{title}}</a></br>
       {{content}} </br>
       <a href="/users/{{id}}">{{user}}</a>     
     </div>
+    </blockquote>
   </script>
 
 </div>

@@ -17,7 +17,13 @@
 
 <p>
   <b>Avatar:</b>
-  <%= @user.avatar %>
+  <%= image_tag (@user.avatar.to_s) %>
+</p>
+
+
+<p>
+  <b>Avatar:</b>
+  <%= @user.email %>
 </p>
 
 <p>

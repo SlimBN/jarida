@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<!-- LOGIN SESSION ACCESS MODULE -->
+
 <% unless user_signed_in? %>
 <!-- This is the off-canvas sidebar -->
 <div id="login-pan" class="uk-offcanvas">
@@ -21,6 +23,12 @@
   </div>
 </div>
 <% end %>
+
+<!-- LOGIN SESSION ACCESS MODULE END -->
+
+
+
+<!-- SIDE BAR NAVS -->
 
 <div id="sidebar-navs">
   <% unless user_signed_in? %>
@@ -41,6 +49,8 @@
   </div>
   <% end %>
 </div>
+
+<!-- SIDE BAR NAVS END -->
 
     <% if user_signed_in? %>
     	<%= current_user.email %>

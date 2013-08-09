@@ -3,25 +3,22 @@
       S'enregistrer
     </div>
 
-    <div class="content controls controls-row">
-
-	    	<%= form_for("user", :url => user_registration_path) do |f| %>
-
-	    	<div class="table">
-
-
-	    		<div class="forms">
-	    			<%= f.text_field :first_name, :class => "names", :placeholder => "Prénom" %>
-					<%= f.text_field :last_name, :class => "names", :placeholder => "Nom" %>
+    <div class="content">
+		<%= form_for("user", :url => user_registration_path, html: {:class => "form-inline"}) do |f| %>
+			
+			<%= f.text_field :first_name, :class => "form-control", :style => "width: 160px;", :placeholder => "Prénom" %>
+			<%= f.text_field :last_name, :class => "form-control", :style => "width: 160px;", :placeholder => "Nom" %>
 
 
-					<%= f.email_field :email, :autofocus => true, :class => "large", :placeholder => "Votre Addresse Email" %>
-					<%= f.password_field :password, :class => "large", :placeholder => "Votre Mot de Passe" %>
-					<%= f.password_field :password_confirmation, :class => "large", :placeholder => "Veuillez confirmer votre mot de passe" %>
-					<%= f.submit "Sign Up", :class => "btn btn-primary" %>			
-	    		</div>
-	    	</div>
+			<%= f.email_field :email, :autofocus => true, :class => "form-control", :style => "width: 322px; margin-top: 10px;", :placeholder => "Votre Addresse Email" %>
+			<%= f.password_field :password, :class => "form-control", :style => "width: 322px; margin-top: 10px;", :placeholder => "Votre Mot de Passe" %>
+			<%= f.password_field :password_confirmation, :class => "form-control", :style => "width: 322px; margin-top: 10px;", :placeholder => "Veuillez confirmer votre mot de passe" %>
 
+			
+			<div class="actions">
+				<%= f.submit "S'enregistrer", :class => "btn btn-primary" %>	
+			</div>
+					
 
 		<% end %>
 

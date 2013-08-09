@@ -5,7 +5,12 @@
 
     <div class="content">
 
-		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+		<div class="facebook_button">
+			<div class="f_logo"></div>
+			<%= link_to (image_tag "sidebar/flogo.png"), user_omniauth_authorize_path(:facebook) %>
+			<%= link_to "Se Connecter avec Facebook", user_omniauth_authorize_path(:facebook) %>
+		</div>
+		
 
     </div>
 </div>

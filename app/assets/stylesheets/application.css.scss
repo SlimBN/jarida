@@ -55,7 +55,7 @@
 #login-panel {
 	z-index: 1000;
 
-	max-width: 370px;
+	width: 370px;
 
 	color: #fff;
 
@@ -89,7 +89,7 @@
 	.login, .register, .social {
 		.header {
 			width: 100%;
-			height: 30px;
+			height: 50px;
 
 			padding: 10px;
 
@@ -110,7 +110,7 @@
 			padding: 10px;
 			background-color: #ebebeb;
 
-			text-align: left;
+			text-align: center;
 			vertical-align: middle;
 
 			.signin {
@@ -125,31 +125,19 @@
 				background-color: #227fdc;
 			}
 
+			input {
+				text-align: left;
+			}
 
 
-			.table {
-				width: 100%;
 
-				.avatar {
-					width: 75px;
+			.actions {
+				width: 335px;
 
-					display: inline-block;
-					vertical-align: top;
-				}
+				margin-top: 10px;
+				padding-right: 0px;
 
-				.forms {
-					width: 100%;
-
-					display: inline-block;
-					vertical-align: top;
-
-					.submit {
-						border-radius: 2px;
-
-						width: 100%;
-						text-align: right;
-					}
-				}
+				text-align: right;
 			}
 		}
 	}

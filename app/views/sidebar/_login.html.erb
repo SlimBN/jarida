@@ -3,14 +3,14 @@
       Se Connecter
     </div>
 
-    <div class="content controls controls-row">
+    <div class="content">
 
-		<%= form_for("user", :url => user_session_path, :class => "form-inline") do |f| %>
-		  <%= f.email_field :email, :autofocus => true, :placeholder => "Email" %>
+		<%= form_for("user", :url => user_session_path, html: {:class => "form-inline"}) do |f| %>
+		  <%= f.email_field :email, :autofocus => true, :class => "form-control", :placeholder => "Email" %>
 
-		  <%= f.password_field :password, :class => "span2", :placeholder => "Password" %>
+		  <%= f.password_field :password, :class => "form-control", :placeholder => "Password" %>
 
-		  <%= f.submit "Sign in", :class => "btn btn-primary" %>
+		  <%= f.submit "Se Connecter", :class => "btn btn-primary" %>
 		<% end %>
 
     </div>
